@@ -49,4 +49,4 @@ app.get('/posts', function(req, res) {
   res.send(JSON.stringify(posts));
 });
 
-app.listen(3000);
+app.listen(3000, "0.0.0.0");
