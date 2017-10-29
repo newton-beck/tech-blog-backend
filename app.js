@@ -49,4 +49,12 @@ app.get('/posts', function(req, res) {
   res.send(JSON.stringify(posts));
 });
 
+app.get("/posts/:category", function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  var postsOfCategory = posts.filter(function(post) {
+    return post.category === req.params.category;
+  });
+  res.send(JSON.stringify(postsOfCategory));
+});
+
 app.listen(3000, "0.0.0.0");
